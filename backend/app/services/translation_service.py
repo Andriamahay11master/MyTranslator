@@ -1,8 +1,11 @@
 from app.models.model_manager import ModelManager
+from app.utils.language_utils import detect_language
 
 model_manager = ModelManager()
 
-def translate_text(text, source_lang, target_lang):
+def translate_text(text, target_lang):
+
+    source_lang = detect_language(text)
 
     model_data = model_manager.get_model(source_lang, target_lang)
 
@@ -15,4 +18,7 @@ def translate_text(text, source_lang, target_lang):
 
     result = tokenizer.decode(translated[0], skip_special_tokens=True)
 
-    return result
+    return {
+        "source_language": source_lang,
+        "translation": result
+    }

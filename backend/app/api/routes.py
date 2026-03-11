@@ -6,7 +6,6 @@ router = APIRouter()
 
 class TranslationRequest(BaseModel):
     text: str
-    source_lang: str
     target_lang: str
 
 
@@ -15,8 +14,7 @@ def translate(request: TranslationRequest):
 
     result = translate_text(
         request.text,
-        request.source_lang,
         request.target_lang
     )
 
-    return {"translation": result}
+    return result
