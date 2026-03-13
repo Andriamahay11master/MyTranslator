@@ -1,8 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from app.services.translation_service import translate_text
 
 router = APIRouter()
+
 
 class TranslationRequest(BaseModel):
     text: str
@@ -12,9 +13,9 @@ class TranslationRequest(BaseModel):
 @router.post("/translate")
 def translate(request: TranslationRequest):
 
-    result = translate_text(
-        request.text,
-        request.target_lang
-    )
+    try:
+        result = translate_text(request.text, request.target_lang)
+        return result
 
-    return result
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
