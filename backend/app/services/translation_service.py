@@ -1,5 +1,6 @@
 from app.models.model_manager import ModelManager
 from app.utils.language_utils import detect_language
+from app.utils.text_utils import split_text
 
 model_manager = ModelManager()
 
@@ -12,13 +13,23 @@ def translate_text(text, target_lang):
     tokenizer = model_data["tokenizer"]
     model = model_data["model"]
 
-    tokens = tokenizer(text, return_tensors="pt", padding=True)
+    chunks = split_text(text)
 
-    translated = model.generate(**tokens)
+    translated_chunks = []
 
-    result = tokenizer.decode(translated[0], skip_special_tokens=True)
+    for chunk in chunks:
+
+        tokens = tokenizer(chunk, return_tensors="pt", padding=True)
+
+        translated = model.generate(**tokens)
+
+        result = tokenizer.decode(translated[0], skip_special_tokens=True)
+
+        translated_chunks.append(result)
+
+    final_translation = " ".join(translated_chunks)
 
     return {
         "source_language": source_lang,
-        "translation": result
+        "translation": final_translation
     }
