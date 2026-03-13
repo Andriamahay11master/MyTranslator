@@ -17,15 +17,14 @@ def translate_text(text, target_lang):
 
     translated_chunks = []
 
-    for chunk in chunks:
+    tokens = tokenizer(chunks, return_tensors="pt", padding=True, truncation=True)
 
-        tokens = tokenizer(chunk, return_tensors="pt", padding=True)
+    translated = model.generate(**tokens)
 
-        translated = model.generate(**tokens)
-
-        result = tokenizer.decode(translated[0], skip_special_tokens=True)
-
-        translated_chunks.append(result)
+    translated_chunks = [
+        tokenizer.decode(t, skip_special_tokens=True)
+        for t in translated
+    ]
 
     final_translation = " ".join(translated_chunks)
 
