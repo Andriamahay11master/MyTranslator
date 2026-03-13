@@ -1,0 +1,8 @@
+SUPPORTED_MODELS = {
+    "en-fr": "Helsinki-NLP/opus-mt-en-fr",
+    "fr-en": "Helsinki-NLP/opus-mt-fr-en",
+    "en-es": "Helsinki-NLP/opus-mt-en-es",
+    "es-en": "Helsinki-NLP/opus-mt-es-en",
+    "en-de": "Helsinki-NLP/opus-mt-en-de",
+    "de-en": "Helsinki-NLP/opus-mt-de-en"
+}
