@@ -1,6 +1,10 @@
-transformers
-torch 
-fastapi 
-uvicorn 
-sentencepiece
-langdetect
+# Core dependencies for MyTranslator
+transformers>=4.21.0  # Hugging Face transformers for NLP models
+torch>=1.12.0         # PyTorch for model inference
+fastapi>=0.68.0       # FastAPI framework for the backend API
+uvicorn[standard]>=0.15.0  # ASGI server for running FastAPI
+sentencepiece>=0.1.96 # Tokenization library for transformers
+langdetect>=1.0.9     # Language detection library
+
+# Testing dependencies
+pytest>=7.0.0         # Testing framework for unit tests
