@@ -12,7 +12,8 @@ class TranslationRequest(BaseModel):
 
 @router.post("/translate")
 def translate(request: TranslationRequest):
-
+    print("REQUEST RECEIVED:", request)
+    
     try:
         result = translate_text(request.text, request.target_lang)
         return result
