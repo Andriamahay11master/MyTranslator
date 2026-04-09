@@ -1,0 +1,45 @@
+textarea {
+  width: 100%;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 1rem;
+  resize: none;
+  outline: none;
+}
+
+.result-box {
+  min-height: 200px;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 1rem;
+  background: #fafafa;
+}
+
+.controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  background: $primary;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: $radius;
+  cursor: pointer;
+
+  &:hover {
+    background: $secondary;
+  }
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+select {
+  padding: 0.5rem;
+  border-radius: $radius;
+}

@@ -1,0 +1,24 @@
+.app {
+  min-height: 100vh;
+  background: $bg;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+}
+
+.panel {
+  flex: 1;
+  background: white;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: 1rem;
+}
