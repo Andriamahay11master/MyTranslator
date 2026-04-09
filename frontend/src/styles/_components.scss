@@ -1,18 +1,22 @@
-textarea {
-  width: 100%;
-  border: 1px solid $border;
-  border-radius: $radius;
+textarea,
+.result-box {
+  line-height: 1.4;
+  text-align: justify;
   padding: 1rem;
+  border-radius: $radius;
+  border: 1px solid $border;
+  min-height: 200px;
+  font-size: 1rem;
+}
+
+textarea {
+  width: calc(100% - 2rem);
   resize: none;
   outline: none;
 }
 
 .result-box {
-  min-height: 200px;
-  border: 1px solid $border;
-  border-radius: $radius;
-  padding: 1rem;
-  background: #fafafa;
+  background: darken($color: $bg, $amount: 0.8);
 }
 
 .controls {
@@ -28,6 +32,7 @@ button {
   padding: 0.6rem 1rem;
   border-radius: $radius;
   cursor: pointer;
+  transition: all 0.2s ease;
 
   &:hover {
     background: $secondary;
