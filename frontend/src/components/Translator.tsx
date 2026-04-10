@@ -56,7 +56,7 @@ export default function Translator() {
       <div className="container">
         {/* INPUT */}
         <div className="panel">
-          <p>Detected: {detectedLang || "?"}</p>
+          <p>Language detected: {detectedLang || "Not detected"}</p>
           <textarea
             rows={10}
             value={text}
