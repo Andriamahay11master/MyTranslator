@@ -56,7 +56,10 @@ export default function Translator() {
       <div className="container">
         {/* INPUT */}
         <div className="panel">
-          <p>Language detected: {detectedLang || "Not detected"}</p>
+          <p>
+            <strong className="text-bold">Language detected:</strong>{" "}
+            {detectedLang || "Not detected"}
+          </p>
           <textarea
             rows={10}
             value={text}
@@ -67,7 +70,7 @@ export default function Translator() {
 
         {/* OUTPUT */}
         <div className="panel">
-          <p>Result:</p>
+          <p className="text-bold">Result:</p>
           <div className="result-box">{result}</div>
         </div>
       </div>
