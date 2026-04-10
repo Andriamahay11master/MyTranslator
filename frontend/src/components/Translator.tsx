@@ -86,12 +86,20 @@ export default function Translator() {
           <option value="de">German</option>
         </select>
 
-        <button onClick={handleTranslate} disabled={loading}>
+        <button
+          className="btn btn-primary"
+          onClick={handleTranslate}
+          disabled={loading}
+        >
           {loading ? "Translating..." : "Translate"}
         </button>
 
-        <button onClick={handleCopy}>Copy</button>
-        <button onClick={handleClear}>Clear</button>
+        <button className="btn btn-secondary" onClick={handleCopy}>
+          Copy
+        </button>
+        <button className="btn btn-outline-primary" onClick={handleClear}>
+          Clear
+        </button>
       </div>
     </div>
   );

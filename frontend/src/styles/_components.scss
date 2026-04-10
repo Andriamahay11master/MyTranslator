@@ -29,25 +29,6 @@ textarea {
   gap: 0.5rem;
 }
 
-button {
-  background: $primary;
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: $radius;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background: $secondary;
-  }
-
-  &:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-  }
-}
-
 select {
   padding: 0.5rem;
   border-radius: $radius;

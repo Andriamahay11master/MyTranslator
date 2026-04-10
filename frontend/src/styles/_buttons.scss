@@ -1,0 +1,37 @@
+.btn {
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &.btn-primary {
+    background: $primary;
+    color: white;
+
+    &:hover {
+      background: rgba($secondary, 0.8);
+    }
+  }
+  &.btn-secondary {
+    background: $secondary;
+    color: white;
+
+    &:hover {
+      background: rgba($grey, 0.8);
+    }
+  }
+  &.btn-outline-primary {
+    background: transparent;
+    color: $primary;
+    border: 1px solid $primary;
+    &:hover {
+      background: rgba($primary, 0.1);
+    }
+  }
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+}
