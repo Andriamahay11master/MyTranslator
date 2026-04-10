@@ -13,6 +13,10 @@ textarea {
   width: calc(100% - 2rem);
   resize: none;
   outline: none;
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($primary, 0.2);
+    transition: all 0.4s ease;
+  }
 }
 
 .result-box {

@@ -21,4 +21,8 @@
   border-radius: $radius;
   box-shadow: $shadow;
   padding: 1rem;
+  .text-bold {
+    font-weight: bold;
+    color: rgba($primary, 0.8);
+  }
 }
