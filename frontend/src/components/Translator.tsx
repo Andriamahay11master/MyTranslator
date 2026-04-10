@@ -51,7 +51,7 @@ export default function Translator() {
 
   return (
     <div className="app">
-      <h1>AI Translator</h1>
+      <h1>AI Translator Tool</h1>
 
       <div className="container">
         {/* INPUT */}
