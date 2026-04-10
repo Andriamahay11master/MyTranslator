@@ -7,6 +7,9 @@ textarea,
   border: 1px solid $border;
   min-height: 200px;
   font-size: 1rem;
+  @include max(768px) {
+    font-size: 0.9rem;
+  }
 }
 
 textarea {
@@ -27,6 +30,15 @@ textarea {
   margin-top: 1rem;
   display: flex;
   gap: 0.5rem;
+  @include max(768px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $bg;
+    border-top: 1px solid $border;
+    padding: 0.7rem;
+  }
 }
 
 select {
